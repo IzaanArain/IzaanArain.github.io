@@ -1,99 +1,65 @@
 *{
-    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    margin:0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
 }
 
 body{
-    background: url(img/coffe2.jpg) no-repeat center center/cover;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    text-align: center;
+    background: url(img/library.jpg)no-repeat center center/ cover;
 }
 
-#add-task-container{
-    width: 350px;
-    padding: 10px 20px;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 0 20px 10px red;
-    margin-bottom: 20px;
-    display: flex;
+.container{
+    width: 550px;
+    height: 450px;
 }
 
-input{
-    flex: 5;
-    margin-right: 10px;
-    border-radius: 10px;
-    font-size: 1.2rem;
-    padding: 5px;
-}
-
-#add-task{
-    flex:1;
-    font-size: 1.2rem;
-    padding: 5px;
-    background-color: white;
-    color: green;
-    border:green solid 2px;
-    border-radius: 10px;
-    transition: .3s;
-}
-
-#add-task:hover{
-    background-color: green;
+.header{
+    font-size:1.2rem;
+    border:solid 2px #fff;
     color: white;
-    border: black solid 2px;
+    background-color:#262626;
+    padding:5px;
+    margin:20px auto;
+    border-radius:5px;
 }
 
-/* styling for task which we added to to-do list */
-
-.task{
-    width:100%;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 0 3px;
-    padding: 5px;
-    margin-bottom: 5px;
-    display: flex;
-    justify-content: space-between;
-}
-.task li{
-    list-style: none;
-    flex:4;
-    font-size: 1.3rem;
-    margin: 10px;
-}
-
-.task button{
-    flex: 1;
-    border-radius: 10px;
+.main-content{
+    width: 100%;
+    /* height: 300px; */
+    height: auto;
     background-color: white;
-    cursor: pointer;
+    border-radius: 15px;
+    padding: 50px 40px;
+    box-shadow: 0 0 10px;
 }
 
-.task .checkTask{
-    color: orange;
-    margin-right: 5px;
-    border: solid 2px orange;
-    font-size: 1.5rem;
+.main-content .text-area{
+    font-size: 1.5em;
+    line-height: 1.5;
 }
 
-.task .checkTask:hover{
-    color: white;
-    background-color: orange;
-}
-
-.task .deleteTask{
+.main-content .person{
+    font-size:1.6rem;
     color: red;
-    margin-right: 5px;
-    border: solid 2px red;
-    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-top: 20px;
 }
 
-.task .deleteTask:hover{
-    color: white;
-    background-color: red;
+.button-area button{
+    background-color:#262626;
+    color:white;
+    font-size: 1.3rem;
+    padding: 10px 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.button-area button:active{
+    background-color: lightblue;
 }
