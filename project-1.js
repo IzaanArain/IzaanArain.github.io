@@ -1,10 +1,10 @@
 //variables
 
-let btn =document.querySelector("#new-quote")
+let quotebtn =document.querySelector("#new-quote")
+let searchBtn=document.querySelector('#search-Button')
 let quote=document.querySelector('.quote');
 let person=document.querySelector('.person');
 let filter=document.getElementById('filter')
-let sBtn=document.querySelector('#search-Button')
 
 const quotes=[
     {
@@ -33,24 +33,65 @@ const quotes=[
     }
 ]
 
-fetch("https://type.fit/api/quotes")
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(data) {
+// fetch("https://type.fit/api/quotes")
+//   .then(function(response) {
+//     return response.json();
+//   })
+//   .then(function(data) {
 
-    // console.log(data);
-    
+//     // console.log(data);
 
-    btn.addEventListener('click',function ChangeQuote(){
-        let random=Math.floor(Math.random()*data.length);
-        // console.log(`Quote: ${data[random].text}`);
-        // console.log(`Author: ${data[random].author}`);
-        quote.innerText=data[random].text
-        person.innerText=`Author : - ${data[random].author}`
-        // person.innerText=quotes[random].person
-    })
+//     searchBtn.addEventListener('click',()=>{
+
+//     })
+
+//     quotebtn.addEventListener('click',function ChangeQuote(){
+//         let random=Math.floor(Math.random()*data.length);
+//         // console.log(`Quote: ${data[random].text}`);
+//         // console.log(`Author: ${data[random].author}`);
+//         quote.innerText=data[random].text
+//         person.innerText=`Author : - ${data[random].author}`
+//         // person.innerText=quotes[random].person
+//     })
+
+//   });
+
+async function fetchQuotes(){
+  const response=await fetch("https://type.fit/api/quotes")
+  const data =await response.json();
+  return data;
+}
+
+fetchQuotes()
+.then(data=>{
+
+  searchBtn.addEventListener('click',()=>{
+    let searchItem=filter.value;
+    console.log(searchItem);
+    console.log(data.length);
+
+    // const searchIndex = data.findIndex((item) => item.author==searchItem);//Jacob Braude
+    // console.log(`Author: ${data[searchIndex].author}`)
+    // console.log(`text: ${data[searchIndex].text}`)
+    // person.innerText=data[searchIndex].author;
+    // quote.innerText=data[searchIndex].text;
+
+    const searchAuthor = data.find((item) => item.author==searchItem);//Jacob Braude
+    console.log(`Author: ${searchAuthor.author}`)
+    console.log(`text: ${searchAuthor.text}`)
+    person.innerText=searchAuthor.author;
+    quote.innerText=searchAuthor.text;
   });
+
+  quotebtn.addEventListener('click',function ChangeQuote(){
+    let random=Math.floor(Math.random()*data.length);
+    // console.log(`Quote: ${data[random].text}`);
+    // console.log(`Author: ${data[random].author}`);
+    quote.innerText=data[random].text
+    person.innerText=`Author : - ${data[random].author}`
+    // person.innerText=quotes[random].person
+  })
+})
 
 
 
