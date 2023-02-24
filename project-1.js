@@ -2,7 +2,7 @@
 
 let btn =document.querySelector("#new-quote")
 let quote=document.querySelector('.quote');
-let person=document.querySelector('.person')
+let person=document.querySelector('.person');
 
 const quotes=[
     {
@@ -42,10 +42,13 @@ fetch("https://type.fit/api/quotes")
         // console.log(`Quote: ${data[random].text}`);
         // console.log(`Author: ${data[random].author}`);
         quote.innerText=data[random].text
-          person.innerText=data[random].author
+          person.innerText=`Author : - ${data[random].author}`
         // person.innerText=quotes[random].person
     })
+
   });
+
+
 
 // btn.addEventListener('click',function(){
 //     let random=Math.floor(Math.random()*quotes.length);
