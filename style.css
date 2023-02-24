@@ -30,6 +30,19 @@ header h1{
     font-weight: bold;
     /* font-size: 30px; */
 }
+#search-button{
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 20px;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 6vw;
+}
+
+#search-button:active{
+    background-color: crimson;
+}
 #filter{
     padding: 5px;
     border-radius: 20px;

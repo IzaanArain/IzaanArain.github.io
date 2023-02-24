@@ -3,6 +3,8 @@
 let btn =document.querySelector("#new-quote")
 let quote=document.querySelector('.quote');
 let person=document.querySelector('.person');
+let filter=document.getElementById('filter')
+let sBtn=document.querySelector('#search-Button')
 
 const quotes=[
     {
@@ -36,16 +38,18 @@ fetch("https://type.fit/api/quotes")
     return response.json();
   })
   .then(function(data) {
+
     // console.log(data);
-    btn.addEventListener('click',function(){
+    
+
+    btn.addEventListener('click',function ChangeQuote(){
         let random=Math.floor(Math.random()*data.length);
         // console.log(`Quote: ${data[random].text}`);
         // console.log(`Author: ${data[random].author}`);
         quote.innerText=data[random].text
-          person.innerText=`Author : - ${data[random].author}`
+        person.innerText=`Author : - ${data[random].author}`
         // person.innerText=quotes[random].person
     })
-
   });
 
 
