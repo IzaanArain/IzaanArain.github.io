@@ -39,6 +39,8 @@ fetch("https://type.fit/api/quotes")
     console.log(data);
     btn.addEventListener('click',function(){
         let random=Math.floor(Math.random()*data.length);
+        console.log(data[random].text);
+        console.log(data[random].author);
         quote.innerText=data[random].text
           person.innerText=data[random].author
         // person.innerText=quotes[random].person
