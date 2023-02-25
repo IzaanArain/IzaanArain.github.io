@@ -75,7 +75,7 @@ fetchQuotes()
     // console.log(`text: ${data[searchIndex].text}`)
     // person.innerText=data[searchIndex].author;
     // quote.innerText=data[searchIndex].text;
-
+    
     const searchAuthor = data.find((item) => item.author==searchItem);//Jacob Braude
     console.log(`Author: ${searchAuthor.author}`)
     console.log(`text: ${searchAuthor.text}`)
